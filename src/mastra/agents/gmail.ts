@@ -23,7 +23,7 @@ When helping users:
 - Respect user privacy and data security
 
 Use the gmailTools to interact with various Gmail services and perform related tasks.`,
-  model: openai("gpt-4o-mini"),
+  model: openai(process.env.MODEL ?? "gpt-5-mini"),
   memory,
   tools: gmailTools,
 });

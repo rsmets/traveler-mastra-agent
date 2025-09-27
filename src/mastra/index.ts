@@ -1,11 +1,12 @@
 import { Mastra } from "@mastra/core";
 import { LibSQLStore } from "@mastra/libsql";
-import { inboxTravelSearchAgent } from "./agents/inboxTravelSearch";
+import { travelAgent } from "./agents/travelAgent";
 import { gmailAgent } from "./agents/gmail";
 import { PinoLogger } from "@mastra/loggers";
+import { webSummarizationAgent } from "./agents/webSummarizationAgent";
 
 export const mastra = new Mastra({
-  agents: { gmailAgent, inboxTravelSearchAgent },
+  agents: { gmailAgent, travelAgent, webSummarizationAgent },
   storage: new LibSQLStore({
     url: "file:../mastra.db",
   }),
